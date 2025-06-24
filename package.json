@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "vite build && echo 'giveaway.augustas.co' > docs/CNAME"
+    "deploy": "vite build && echo 'giveaway.augustas.co' > docs/CNAME && cp docs/index.html docs/404.html && git add . && git commit -m 'deploy' && git push"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
