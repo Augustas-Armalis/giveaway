@@ -8,8 +8,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 // Editable variables at the top
 const HERO_IMAGE_SRC = "../images/giveaways/giveaway4.webp";
-const HERO_TITLE = "8 Free Hero-Designs";
-const FIGMA_LINK = "https://www.figma.com/community/file/1513899398488706391";
+const HERO_TITLE = "8 Free SaaS Hero-Designs";
+const FIGMA_LINK = "https://www.figma.com/community/file/1519361691430085494";
 
 const giveaway4 = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
