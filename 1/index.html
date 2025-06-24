@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SEO Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <meta name="title" content="8 Free Hero Designs Giveaway | AWeb">
+  <meta name="description" content="Claim your 8 free hero website designs by signing up now. Quick, clean and modern UI kits for startups and creatives.">
+
+  <meta property="og:title" content="8 Free Hero Designs Giveaway | AWeb">
+  <meta property="og:description" content="Claim your 8 free hero website designs by signing up now. Quick, clean and modern UI kits for startups and creatives.">
+  <meta property="og:image" content="https://augustas.co/images/thumbnails/OG.png">
+  <meta property="og:url" content="https://augustas.co/giveaway3">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="8 Free Hero Designs Giveaway | AWeb">
+  <meta name="twitter:description" content="Claim your 8 free hero website designs by signing up now. Quick, clean and modern UI kits for startups and creatives.">
+  <meta name="twitter:image" content="https://augustas.co/images/thumbnails/OG.png">
+
+  <meta name="author" content="Augustas | AWeb">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="alternate" href="https://augustas.co/giveaway3" hreflang="en">
+  <title>8 Free Hero Designs Giveaway | AWeb</title>
+  <link rel="canonical" href="https://augustas.co/giveaway3">
+  <link rel="icon" type="image/x-icon" href="images/logos/Favicon.ico">
+
+  <!-- Framer Motion CDN -->
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <!-- LottieFiles Player CDN -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+
+  <style>
+    body { margin:0; font-family: sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+    .container { display: flex; flex-direction: row; height: 100vh; }
+    .left { width: 50%; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
+    .right { width: 50%; }
+    .right img { width: 100%; height: 100vh; object-fit: cover; }
+    h1 { font-size: 32px; margin-bottom: 16px; }
+    p { font-size: 16px; margin-bottom: 24px; }
+    form { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 400px; }
+    input, button { padding: 12px; border-radius: 8px; border: 1px solid #444; background: #111; color: #fff; }
+    button { background: #fff; color: #000; cursor: pointer; }
+    button:hover { opacity: 0.8; }
+    .lottie { margin: 20px auto; width: 80px; height: 80px; }
+    .footer { position: absolute; bottom: 20px; left: 40px; font-size: 14px; color: #777; }
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <div class="left">
+    <h1>8 Free Hero-Designs</h1>
+    <p>Get a copy by filling in the form below</p>
+    <form id="giveawayForm">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Get designs</button>
+    </form>
+    <div id="result" style="text-align:center; margin-top:20px;"></div>
+    <div class="footer">AWeb © 2025</div>
+  </div>
+  <div class="right">
+    <img src="images/giveaways/giveaway3.webp" alt="giveaway image">
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('giveawayForm');
+  const resultDiv = document.getElementById('result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    resultDiv.innerHTML = 'Submitting...';
+    const name = form.name.value;
+    const email = form.email.value;
+
+    const apiKey = 'YOUR_API_KEY';
+
+    try {
+      const groupRes = await fetch('https://connect.mailerlite.com/api/groups?filter[name]=Newsletter', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        }
+      });
+      const groupData = await groupRes.json();
+      const groupId = groupData.data[0].id;
+
+      const subscribeRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({ email, fields: { name }, groups: [groupId] })
+      });
+
+      if (!subscribeRes.ok) throw new Error('Subscription failed');
+
+      resultDiv.innerHTML = `
+        <dotlottie-player src="https://lottie.host/dc29b91d-02d0-45ee-92ff-1940917a12c1/EdY0IxwWnQ.lottie" autoplay style="width:70px;height:70px;"></dotlottie-player>
+        <p>Thank you! <a href='https://www.figma.com/community/file/1513899398488706391' target='_blank' style='color:#0af;'>Get designs here</a></p>
+      `;
+    } catch (error) {
+      resultDiv.innerHTML = `
+        <dotlottie-player src="https://lottie.host/03a6bdf9-e4a4-4dd9-a37c-a7b76c0d6268/y6MZDpgafZ.lottie" autoplay style="width:70px;height:70px;"></dotlottie-player>
+        <p>Something went wrong. <a href="#" onclick="location.reload()" style='color:#0af;'>Try again</a></p>
+      `;
+    }
+  });
+</script>
+
+</body>
+</html>
