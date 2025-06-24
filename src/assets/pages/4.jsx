@@ -11,6 +11,8 @@ const HERO_IMAGE_SRC = "../images/giveaways/giveaway4.webp";
 const HERO_TITLE = "8 Free SaaS Hero-Designs";
 const FIGMA_LINK = "https://www.figma.com/community/file/1519361691430085494";
 
+// please work
+
 const giveaway4 = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionResult, setSubmissionResult] = useState(null);
