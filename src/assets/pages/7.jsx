@@ -7,11 +7,11 @@ import { useState, useRef } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 // Editable variables at the top
-const HERO_IMAGE_SRC = "../images/giveaways/giveaway6.webp";
-const HERO_TITLE = "4 Free Hero Backgrounds";
+const HERO_IMAGE_SRC = "../images/giveaways/giveaway7.webp";
+const HERO_TITLE = "8 Free SaaS Hero-Designs";
 const FIGMA_LINK = "https://www.figma.com/community/file/1520760900741449228";
 
-const giveaway6 = () => {
+const giveaway7 = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionResult, setSubmissionResult] = useState(null);
   const lottieRef = useRef(null);
@@ -214,7 +214,7 @@ const giveaway6 = () => {
                   variants={itemVariants}
                 >
                   <p className="smif text-black text-[18px] leading-[115%] !pt-[4px]">
-                    {isSubmitting ? 'Submitting...' : 'Get Backgrounds'}
+                    {isSubmitting ? 'Submitting...' : 'Get designs'}
                   </p>
                 </motion.button>
               </motion.form>
@@ -401,4 +401,4 @@ const giveaway6 = () => {
   );
 };
 
-export default giveaway6;
+export default giveaway7;
