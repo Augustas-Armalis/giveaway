@@ -15,6 +15,7 @@ import Giveaway4 from './assets/pages/4.jsx';
 import Giveaway5 from './assets/pages/5.jsx';
 import Giveaway6 from './assets/pages/6.jsx';
 import Giveaway7 from './assets/pages/7.jsx';
+import Giveaway8 from './assets/pages/8.jsx';
 import HereIsWhere from './assets/pages/HereIsWhere.jsx';
 
 createRoot(document.getElementById('root')).render(
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/5" element={<Giveaway5 />} />
           <Route path="/6" element={<Giveaway6 />} />
           <Route path="/7" element={<Giveaway7 />} />
+          <Route path="/8" element={<Giveaway8 />} />
           <Route path="/hereiswhere" element={<HereIsWhere />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
