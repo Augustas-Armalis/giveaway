@@ -9,7 +9,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 // Editable variables at the top
 const HERO_IMAGE_SRC = "../images/giveaways/lunor1.webp";
 const HERO_TITLE = "8 Free Premium Designs From Lunor Design Library";
-const FIGMA_LINK = "https://www.figma.com/design/FYcLpkhKBSfDxcVg3SxC4c/6-Free-SaaS-Hero-Designs?node-id=0-1&t=JS4O3waGEGiRXIzJ-1";
+const FIGMA_LINK = "https://www.figma.com/design/gNKwj8yCjWicTJVxAynuhW/Lunor-Giveaway?node-id=0-1&t=mnTnLWSbp6SZL9yB-1";
 
 const Lunor1 = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
