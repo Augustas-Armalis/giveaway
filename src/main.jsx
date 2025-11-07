@@ -18,6 +18,7 @@ import Giveaway7 from './assets/pages/7.jsx';
 import Giveaway8 from './assets/pages/8.jsx';
 import Giveaway9 from './assets/pages/9.jsx';
 import Giveaway10 from './assets/pages/10.jsx';
+import Giveaway11 from './assets/pages/11.jsx';
 import Lunor1 from './assets/pages/Lunor1.jsx';
 import Lunor2 from './assets/pages/Lunor2.jsx';
 import HereIsWhere from './assets/pages/HereIsWhere.jsx';
@@ -41,6 +42,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/8" element={<Giveaway8 />} />
           <Route path="/9" element={<Giveaway9 />} />
           <Route path="/10" element={<Giveaway10 />} />
+          <Route path="/11" element={<Giveaway11 />} />
           <Route path="/Lunor1" element={<Lunor1 />} />
           <Route path="/Lunor2" element={<Lunor2 />} />
           <Route path="/hereiswhere" element={<HereIsWhere />} />
